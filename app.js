@@ -68,7 +68,7 @@ birth.addEventListener("change", () => {
             a += 12
         }
         // console.log("test");
-        if (b < 0){
+        else if (b < 0){
             a -= 1
             b += 31
         }
@@ -77,7 +77,10 @@ birth.addEventListener("change", () => {
         diff_month = a;
         diff_day = b;
     }
-    console.log(diff_year, diff_month, diff_day);
+    diff_month = (diff_month < 10) ? "0" + diff_month : diff_month;
+    diff_day = (diff_day < 10) ? "0" + diff_day : diff_day;
+
+    // console.log(diff_year, diff_month, diff_day);
     document.getElementById("years").innerText = diff_year;
     document.getElementById("months").innerHTML = diff_month;
     document.getElementById("days").innerHTML = diff_day;
